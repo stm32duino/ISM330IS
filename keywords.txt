@@ -1,0 +1,69 @@
+#######################################
+# Syntax Coloring Map For ISM330IS
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ISM330ISSensor KEYWORD1
+ISM330IS_SensorIntPin_t KEYWORD1
+ISM330IS_AxesRaw_t KEYWORD1
+ISM330IS_Axes_t KEYWORD1
+ISM330IS_Event_Status_t KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+ReadID KEYWORD2
+Read_Reg KEYWORD2
+Write_Reg KEYWORD2
+Set_Interrupt_Latch KEYWORD2
+Enable_X KEYWORD2
+Disable_X KEYWORD2
+Get_X_Sensitivity KEYWORD2
+Get_X_OutputDataRate KEYWORD2
+Set_X_OutputDataRate KEYWORD2
+Get_X_FullScale KEYWORD2
+Set_X_FullScale KEYWORD2
+Get_X_AxesRaw KEYWORD2
+Get_X_Axes KEYWORD2
+Enable_G KEYWORD2
+Disable_G KEYWORD2
+Get_G_Sensitivity KEYWORD2
+Get_G_OutputDataRate KEYWORD2
+Set_G_OutputDataRate KEYWORD2
+Get_G_FullScale KEYWORD2
+Set_G_FullScale KEYWORD2
+Get_G_AxesRaw KEYWORD2
+Get_G_Axes KEYWORD2
+Get_X_Event_Status KEYWORD2
+Set_X_SelfTest KEYWORD2
+Get_X_DRDY_Status KEYWORD2
+Get_X_Init_Status KEYWORD2
+Set_X_INT1_DRDY KEYWORD2
+Set_G_SelfTest KEYWORD2
+Get_G_DRDY_Status KEYWORD2
+Get_G_Init_Status KEYWORD2
+Set_G_INT1_DRDY KEYWORD2
+Set_DRDY_Mode KEYWORD2
+Set_Mem_Bank KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+ISM330IS_OK LITERAL1
+ISM330IS_ERROR LITERAL1
+ISM330IS_ACC_SENSITIVITY_FS_2G LITERAL1
+ISM330IS_ACC_SENSITIVITY_FS_4G LITERAL1
+ISM330IS_ACC_SENSITIVITY_FS_8G LITERAL1
+ISM330IS_ACC_SENSITIVITY_FS_16G LITERAL1
+ISM330IS_GYRO_SENSITIVITY_FS_125DPS LITERAL1
+ISM330IS_GYRO_SENSITIVITY_FS_250DPS LITERAL1
+ISM330IS_GYRO_SENSITIVITY_FS_500DPS LITERAL1
+ISM330IS_GYRO_SENSITIVITY_FS_1000DPS LITERAL1
+ISM330IS_GYRO_SENSITIVITY_FS_2000DPS LITERAL1
+
+
