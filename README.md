@@ -41,6 +41,9 @@ The access to the sensor values is done as explained below:
 
 * ISM330IS_DataLog_Terminal: This application shows how to get data from ISM330IS accelerometer and gyroscope and print them on terminal.
 
+* ISM330IS_ISPU_Sensor_Fusion: This application implements the sensor fusion of the accelerometer and gyroscope, configured in high-performance mode at 104 Hz. The configuration generates an interrupt on INT1 when the quaternion for the new sample is computed and available in the output registers.
+
+* ISM330IS_SPU_Tap: This application implements the tap detection solution based on the accelerometer data. The configuration generates an interrupt on INT1 when the tap event for the new sample is computed and available in the output registers.
 ## Documentation
 
 You can find the source files at  
