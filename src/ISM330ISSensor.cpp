@@ -856,6 +856,57 @@ ISM330ISStatusTypeDef ISM330ISSensor::Set_Mem_Bank(uint8_t Val)
 /**
   * @}
   */
+/**
+ * @brief  Get the status of all ISPU events
+ * @param  Status the status of all ISPU events
+ * @retval 0 in case of success, an error code otherwise
+ */
+ISM330ISStatusTypeDef ISM330ISSensor::Get_ISPU_Status(ISM330IS_ISPU_Status_t *Status)
+{
+  ISM330ISStatusTypeDef ret = ISM330IS_OK;
+
+  union {
+    uint32_t val;
+    ISM330IS_ISPU_Status_t status;
+  } ispu_status;
+
+  if (ism330is_ia_ispu_get(&reg_ctx, &ispu_status.val) != ISM330IS_OK) {
+    ret = ISM330IS_ERROR;
+  }
+
+  *Status = ispu_status.status;
+  return ret;
+}
+
+
+/**
+  * @brief  Get the ISM330IS ISPU Output
+  * @param  Reg address where to start reading
+  * @param  len number of registers to read
+  * @param  Data pointer where the value is written
+  * @retval 0 in case of success, an error code otherwise
+  */
+ISM330ISStatusTypeDef ISM330ISSensor::Read_ISPU_Output(uint8_t Reg, uint8_t *Data, uint8_t len)
+{
+  ISM330ISStatusTypeDef ret = ISM330IS_OK;
+  //Check that register to read is an ISPU Output register
+  if (Reg < ISM330IS_ISPU_DOUT_00_L || Reg > ISM330IS_ISPU_DOUT_31_H) {
+    return ISM330IS_ERROR;
+  }
+  //Enable the access to the ISPU interaction registers
+  if (ism330is_mem_bank_set(&reg_ctx, ISM330IS_ISPU_MEM_BANK) != ISM330IS_OK) {
+    ret = ISM330IS_ERROR;
+  }
+  if (ism330is_read_reg(&reg_ctx, Reg, Data, len) != ISM330IS_OK) {
+    ret = ISM330IS_ERROR;
+  }
+  //Disable the access to the ISPU interaction registers
+  if (ism330is_mem_bank_set(&reg_ctx, ISM330IS_MAIN_MEM_BANK) != ISM330IS_OK) {
+    ret = ISM330IS_ERROR;
+  }
+  return ret;
+}
+
 /** @defgroup ISM330IS_Private_Functions ISM330IS Private Functions
   * @{
   */

@@ -90,6 +90,38 @@ typedef struct {
   unsigned int D6DOrientationStatus : 1;
   unsigned int SleepStatus : 1;
 } ISM330IS_Event_Status_t;
+typedef struct {
+  unsigned int ia_ispu_0 : 1;
+  unsigned int ia_ispu_1 : 1;
+  unsigned int ia_ispu_2 : 1;
+  unsigned int ia_ispu_3 : 1;
+  unsigned int ia_ispu_4 : 1;
+  unsigned int ia_ispu_5 : 1;
+  unsigned int ia_ispu_6 : 1;
+  unsigned int ia_ispu_7 : 1;
+  unsigned int ia_ispu_8 : 1;
+  unsigned int ia_ispu_9 : 1;
+  unsigned int ia_ispu_10 : 1;
+  unsigned int ia_ispu_11 : 1;
+  unsigned int ia_ispu_12 : 1;
+  unsigned int ia_ispu_13 : 1;
+  unsigned int ia_ispu_14 : 1;
+  unsigned int ia_ispu_15 : 1;
+  unsigned int ia_ispu_16 : 1;
+  unsigned int ia_ispu_17 : 1;
+  unsigned int ia_ispu_18 : 1;
+  unsigned int ia_ispu_19 : 1;
+  unsigned int ia_ispu_20 : 1;
+  unsigned int ia_ispu_21 : 1;
+  unsigned int ia_ispu_22 : 1;
+  unsigned int ia_ispu_23 : 1;
+  unsigned int ia_ispu_24 : 1;
+  unsigned int ia_ispu_25 : 1;
+  unsigned int ia_ispu_26 : 1;
+  unsigned int ia_ispu_27 : 1;
+  unsigned int ia_ispu_28 : 1;
+  unsigned int ia_ispu_29 : 1;
+} ISM330IS_ISPU_Status_t;
 /* Class Declaration ---------------------------------------------------------*/
 /**
  * Abstract class of a ISM330IS pressure sensor.
@@ -132,6 +164,8 @@ class ISM330ISSensor {
     ISM330ISStatusTypeDef Set_G_INT1_DRDY(uint8_t Val);
     ISM330ISStatusTypeDef Set_DRDY_Mode(uint8_t Val);
     ISM330ISStatusTypeDef Set_Mem_Bank(uint8_t Val);
+    ISM330ISStatusTypeDef Get_ISPU_Status(ISM330IS_ISPU_Status_t *Status);
+    ISM330ISStatusTypeDef Read_ISPU_Output(uint8_t Reg, uint8_t *Data, uint8_t len);
     /**
      * @brief Utility function to read data.
      * @param  pBuffer: pointer to data to be read.
